@@ -2,6 +2,7 @@
 #include "seriepar.h"
 #include "serieimpar.h"
 #include "serieloca.h"
+#include "serieprimo.h"
 #include <cstdlib>
 #include <ctime>
 
@@ -16,17 +17,21 @@ void Juego::generar()
     srand(time(0));
     int semilla = (rand() % 2);
 
-    switch (semilla) {
+     switch (semilla) {
     case 0:
         this->serie = new SeriePar();
         break;
     case 1:
         this->serie = new SerieLoca();
         break;
+    case 2:
+        this->serie = new SeriePrimo();
+        break;
     default:
-        this->serie = new SerieImpar();
+       this->serie = new SeriePrimo();
         break;
     }
+
     this->serie->generar();
 }
 
