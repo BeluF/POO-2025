@@ -28,7 +28,7 @@ void Juego::generar()
         this->serie = new SeriePrimo();
         break;
     default:
-       this->serie = new SeriePrimo();
+       this->serie = new SerieImpar();
         break;
     }
 
